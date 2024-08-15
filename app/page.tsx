@@ -9,7 +9,7 @@ import { button as buttonStyles } from '@nextui-org/theme'
 import { siteConfig } from '@/config/site'
 import { title, subtitle } from '@/components/primitives'
 import { GithubIcon } from '@/components/icons'
-import { ClientSecret, RequestedData } from '@facesignai/api'
+import { ClientSecret, RequestedData, Session } from '@facesignai/api'
 import RequestedDataRow from '@/components/RequestedDataRow'
 import { Button } from '@nextui-org/button'
 import dayjs from 'dayjs'
@@ -18,6 +18,7 @@ import FaceSignModal from '@/components/FaceSignModal'
 export default function Home () {
   const [requestedData, setRequestedData] = useState<RequestedData[]>([])
   const [sessionId, setSessionId] = useState<string>()
+  const [session, setSession] = useState<Session>()
   const [clientSecret, setClientSecret] = useState<ClientSecret>()
   const [modalIsOpen, setModalIsOpen] = useState(false)
 
@@ -61,6 +62,7 @@ export default function Home () {
       })
       const { sessionId, clientSecret } = await response.json()
       setSessionId(sessionId)
+      setSession(undefined)
       setClientSecret(clientSecret)
     } catch (error) {
       console.error('onCreateSessionClick:', error)
@@ -80,6 +82,24 @@ export default function Home () {
       })
       const clientSecret = await response.json()
       setClientSecret(clientSecret)
+    } catch (error) {
+      console.error('onCreateSessionClick:', error)
+    }
+  }
+
+  const onRetrieveOutputDataClick = async () => {
+    try {
+      const response = await fetch('/api/retrieve_session', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          sessionId
+        })
+      })
+      const session = await response.json()
+      setSession(session)
     } catch (error) {
       console.error('onCreateSessionClick:', error)
     }
@@ -120,27 +140,6 @@ export default function Home () {
     )
   }
 
-  const renderButtons = () => {
-    return (
-      <div className='flex flex-row pt-8 gap-4'>
-        <Button
-          color='primary'
-          onClick={onCreateSessionClick}
-          isDisabled={requestedDataIsEmpty}
-        >
-          Create session
-        </Button>
-        <Button
-          color='secondary'
-          isDisabled={!clientSecret}
-          onClick={() => setModalIsOpen(true)}
-        >
-          Start session
-        </Button>
-      </div>
-    )
-  }
-
   const renderCurrentSession = () => {
     if (sessionId) {
       return (
@@ -167,13 +166,20 @@ export default function Home () {
             </span>
           </div>
 
-          <div className='flex '>
+          <div className='flex flex-row pt-8 gap-4'>
             <Button
-              size='sm'
+              size='md'
               variant='bordered'
               onClick={onCreateClientSecretClick}
             >
               Create new client secret
+            </Button>
+            <Button
+              color='secondary'
+              isDisabled={!clientSecret}
+              onClick={() => setModalIsOpen(true)}
+            >
+              Start session
             </Button>
           </div>
         </div>
@@ -189,14 +195,73 @@ export default function Home () {
     }
   }
 
+  const renderOutputData = () => {
+    if (sessionId) {
+      return (
+        <div className='flex flex-col  gap-2'>
+          {session && session.data && (
+            <div>
+              {Object.keys(session.data).map(k => (
+                <p className='text-sm' key={k}>
+                  {k}:{' '}
+                  <b>{session.data[k] === null ? 'null' : session.data[k]}</b>
+                </p>
+              ))}
+            </div>
+          )}
+          {session && session.transcript && (
+            <div className='pt-2'>
+              <p>
+                <b>Transcript:</b>
+              </p>
+              {session.transcript.map(phrase => (
+                <p className='text-sm' key={phrase.id}>
+                  <span className='text-gray-600'>
+                    {phrase.isAvatar ? 'Avatar: ' : 'User: '}
+                  </span>
+                  {phrase.text}
+                </p>
+              ))}
+            </div>
+          )}
+          <div className='flex pt-4'>
+            <Button
+              size='sm'
+              variant='bordered'
+              onClick={onRetrieveOutputDataClick}
+            >
+              Retrieve output data
+            </Button>
+          </div>
+        </div>
+      )
+    }
+  }
+
   return (
     <section className='flex flex-col items-center justify-center gap-6 py-4 md:py-4'>
       {renderRequestedData()}
-      <div className='flex flex-col gap-4 items-start w-full'>
-        <h2 className='font-semibold text-lg'>Current session</h2>
-        {renderCurrentSession()}
+      <div className='flex flex-row py-4 gap-4 w-full justify-start'>
+        <Button
+          color='primary'
+          onClick={onCreateSessionClick}
+          isDisabled={requestedDataIsEmpty}
+        >
+          Create session
+        </Button>
       </div>
-      {renderButtons()}
+      {sessionId && (
+        <div className='flex md:flex-row flex-col w-full gap-6'>
+          <div className='flex flex-col gap-4 items-start w-full flex-1'>
+            <h2 className='font-semibold text-lg'>Current session</h2>
+            {renderCurrentSession()}
+          </div>
+          <div className='flex flex-col gap-4 items-start w-full flex-1'>
+            <h2 className='font-semibold text-lg'>Output data</h2>
+            {renderOutputData()}
+          </div>
+        </div>
+      )}
       {clientSecret && (
         <FaceSignModal
           clientSecret={clientSecret}

@@ -9,6 +9,10 @@ export const siteConfig = {
     //   href: '/'
     // },
     // {
+    //   label: 'Home',
+    //   href: '/'
+    // },
+    // {
     //   label: 'Docs',
     //   href: '/docs'
     // },
@@ -60,6 +64,7 @@ export const siteConfig = {
   //   }
   // ],
   links: {
+    apiReference: 'https://docs.facesign.ai/',
     github: 'https://github.com/facesignai/facesign-api',
     // twitter: 'https://twitter.com/getnextui',
     docs: 'https://docs.facesign.ai'

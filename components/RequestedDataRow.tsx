@@ -27,20 +27,22 @@ const RequestedDataRow: FC<Props> = ({ rd, onChange, onDelete }) => {
 
   return (
     <div className='flex flex-row gap-2 items-center'>
-      <div className='flex-1'>
-        <SimpleInput
-          label='key'
-          value={rd?.key || ''}
-          onChange={onKeyChanged}
-        />
-      </div>
-      <div className='flex-[2_2_0%]'>
-        <SimpleInput
-          label='description'
-          value={rd?.description || ''}
-          onChange={onDescriptionChanged}
-          isDisabled={!rd || rd.key == ''}
-        />
+      <div className='w-full flex-col flex-1 flex md:flex-row gap-1 md:gap-2'>
+        <div className='flex-1'>
+          <SimpleInput
+            label='key'
+            value={rd?.key || ''}
+            onChange={onKeyChanged}
+          />
+        </div>
+        <div className='flex-[2_2_0%]'>
+          <SimpleInput
+            label='description'
+            value={rd?.description || ''}
+            onChange={onDescriptionChanged}
+            isDisabled={!rd || rd.key == ''}
+          />
+        </div>
       </div>
       <div className='flex w-14'>
         {rd && (
@@ -49,7 +51,7 @@ const RequestedDataRow: FC<Props> = ({ rd, onChange, onDelete }) => {
             size='sm'
             isSelected={rd?.isRequired || false}
             onValueChange={onRequiredChanged}
-            className='flex flex-col'
+            className='flex flex-col justify-center'
           >
             Required
           </Checkbox>

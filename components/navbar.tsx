@@ -52,9 +52,14 @@ export const Navbar = () => {
     <NextUINavbar maxWidth='xl' position='sticky'>
       <NavbarContent className='basis-1/5 sm:basis-full' justify='start'>
         <NavbarBrand as='li' className='gap-3 max-w-fit'>
-          <NextLink className='flex justify-start items-center gap-1' href='/'>
+          <NextLink
+            className='flex flex-col justify-start items-end gap-0'
+            href='/'
+          >
             <Logo />
-            <p className='font-bold text-inherit'>Interactive Demo</p>
+            <p className='font-bold text-inherit text-sm pr-1'>
+              Interactive Demo
+            </p>
           </NextLink>
         </NavbarBrand>
         {/* <ul className='hidden lg:flex gap-4 justify-start ml-2'>
@@ -86,6 +91,20 @@ export const Navbar = () => {
           <Link isExternal aria-label='Discord' href={siteConfig.links.discord}>
             <DiscordIcon className='text-default-500' />
           </Link> */}
+          <Link
+            isExternal
+            aria-label='API Reference'
+            href={siteConfig.links.apiReference}
+          >
+            <span
+              className={clsx(
+                linkStyles({ color: 'foreground' }),
+                'data-[active=true]:text-primary data-[active=true]:font-medium'
+              )}
+            >
+              API Docs
+            </span>
+          </Link>
           <Link isExternal aria-label='Github' href={siteConfig.links.github}>
             <GithubIcon className='text-default-500' />
           </Link>
@@ -107,6 +126,20 @@ export const Navbar = () => {
       </NavbarContent>
 
       <NavbarContent className='sm:hidden basis-1 pl-4' justify='end'>
+        <Link
+          isExternal
+          aria-label='API Reference'
+          href={siteConfig.links.apiReference}
+        >
+          <span
+            className={clsx(
+              linkStyles({ color: 'foreground' }),
+              'data-[active=true]:text-primary data-[active=true]:font-medium text-sm text-nowrap'
+            )}
+          >
+            API Docs
+          </span>
+        </Link>
         <Link isExternal aria-label='Github' href={siteConfig.links.github}>
           <GithubIcon className='text-default-500' />
         </Link>

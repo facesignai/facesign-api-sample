@@ -1,12 +1,5 @@
 import { ClientSecret } from '@facesignai/api'
-import {
-  Modal,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-  useDisclosure
-} from '@nextui-org/modal'
+import { Modal, ModalContent } from '@nextui-org/modal'
 import { FC, useEffect } from 'react'
 
 type Props = {
@@ -30,6 +23,10 @@ const FaceSignModal: FC<Props> = ({ isOpen, clientSecret, onClose }) => {
   const onMessage = (event: MessageEvent<any>) => {
     if (event.origin === 'https://identity.facefile.co') {
       console.log('onMessage', event)
+      const data = JSON.parse(event.data)
+      if (data.message === 'SESSION_FINISHED') {
+        onClose()
+      }
     }
   }
 
