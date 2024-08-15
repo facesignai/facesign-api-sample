@@ -40,7 +40,7 @@ const RequestedDataRow: FC<Props> = ({ rd, onChange, onDelete }) => {
             label='description'
             value={rd?.description || ''}
             onChange={onDescriptionChanged}
-            isDisabled={!rd || rd.key == ''}
+            isDisabled={!rd || rd.key === ''}
           />
         </div>
       </div>

@@ -1,5 +1,6 @@
-const API_KEY = process.env.FACESIGN_API_KEY
 import FaceSignClient, { RequestedData, SessionSettings } from '@facesignai/api'
+
+const API_KEY = process.env.FACESIGN_API_KEY
 
 export async function POST (req: Request) {
   try {

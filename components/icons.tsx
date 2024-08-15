@@ -2,12 +2,7 @@ import * as React from 'react'
 
 import { IconSvgProps } from '@/types'
 
-export const Logo: React.FC<IconSvgProps> = ({
-  size = 36,
-  width,
-  height,
-  ...props
-}) => (
+export const Logo: React.FC<IconSvgProps> = () => (
   <svg
     width='154'
     height='31'
@@ -226,7 +221,7 @@ export const NextUILogo: React.FC<IconSvgProps> = props => {
   )
 }
 
-export const TrashIcon = (props: IconSvgProps) => (
+export const TrashIcon = () => (
   <svg
     xmlns='http://www.w3.org/2000/svg'
     width='24'
