@@ -125,11 +125,9 @@ export default function Home () {
       <div className='flex flex-col gap-2 items-start w-full'>
         <h2 className='font-semibold text-lg'>Requested params</h2>
         <span className='text-xs text-gray-500 max-w-2xl'>
-          Fill the form to create a task for FaseSign. Keys are variable names
-          of the output object. They descibe data that you would like to get
-          about the user. For example: userName, carModel, phone etc. If the key
-          seems too abstract, add the key description to the description field,
-          for example: the model of the user's current car.
+          {
+            "Fill the form to create a task for FaseSign. Keys are variable name of the output object. They descibe data that you would like to get about the user. For example: userName, carModel, phone etc. If the key seems too abstract, add the key description to the description field, for example: the model of the user's current car."
+          }
         </span>
         {renderRequestedParams()}
       </div>
