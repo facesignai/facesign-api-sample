@@ -3,7 +3,12 @@ module.exports = {
     browser: true,
     es2021: true
   },
-  extends: ['plugin:react/recommended', 'plugin:react/jsx-runtime', 'standard'],
+  extends: [
+    'plugin:react/recommended',
+    'plugin:react/jsx-runtime',
+    'standard',
+    'plugin:@next/next/recommended'
+  ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
@@ -18,5 +23,10 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': 'error',
     'react/no-children-prop': 'off',
     'multiline-ternary': 'off'
+  },
+  settings: {
+    react: {
+      version: 'detect'
+    }
   }
 }
