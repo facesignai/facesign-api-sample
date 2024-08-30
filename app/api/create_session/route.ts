@@ -1,4 +1,8 @@
-import FaceSignClient, { RequestedData, SessionSettings } from '@facesignai/api'
+import FaceSignClient, {
+  ILogLevel,
+  RequestedData,
+  SessionSettings
+} from '@facesignai/api'
 
 const API_KEY = process.env.FACESIGN_API_KEY
 
@@ -9,7 +13,9 @@ export async function POST (req: Request) {
     }
 
     const fApi = new FaceSignClient({
-      auth: API_KEY
+      auth: API_KEY,
+      logLevel: ILogLevel.DEBUG,
+      serverUrl: process.env.FACESIGN_SERVER_URL
     })
 
     const { requestedData } = await req.json()

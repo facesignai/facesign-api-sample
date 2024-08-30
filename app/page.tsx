@@ -151,6 +151,11 @@ export default function Home () {
           </div>
           <div className='flex flex-row gap-4'>
             <span className='text-sm'>
+              Standalone URL: <b>{clientSecret ? clientSecret.url : '-'}</b>
+            </span>
+          </div>
+          <div className='flex flex-row gap-4'>
+            <span className='text-sm'>
               Client secret expire at:{' '}
               <b>
                 {clientSecret

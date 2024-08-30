@@ -10,7 +10,8 @@ export async function POST (req: Request) {
 
     const fApi = new FaceSignClient({
       auth: API_KEY,
-      logLevel: ILogLevel.DEBUG
+      logLevel: ILogLevel.DEBUG,
+      serverUrl: process.env.FACESIGN_SERVER_URL
     })
 
     const { sessionId } = await req.json()
