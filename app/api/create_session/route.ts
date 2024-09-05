@@ -18,12 +18,14 @@ export async function POST (req: Request) {
       serverUrl: process.env.FACESIGN_SERVER_URL
     })
 
-    const { requestedData } = await req.json()
+    const { requestedData, avatarId, voiceId } = await req.json()
 
     const sessionSettings: SessionSettings = {
       clientReferenceId: '',
       metadata: {},
-      requestedData: requestedData as RequestedData[]
+      requestedData: requestedData as RequestedData[],
+      avatarId,
+      voiceId
     }
 
     const { clientSecret, session } = await fApi.session.create(sessionSettings)

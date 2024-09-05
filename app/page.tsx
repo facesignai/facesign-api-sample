@@ -6,10 +6,14 @@ import RequestedDataRow from '@/components/RequestedDataRow'
 import { Button } from '@nextui-org/button'
 import dayjs from 'dayjs'
 import FaceSignModal from '@/components/FaceSignModal'
+import AvatarSelect from '@/components/AvatarSelect'
+import VoiceSelect from '@/components/VoiceSelect'
 
 export default function Home () {
   const [requestedData, setRequestedData] = useState<RequestedData[]>([])
   const [sessionId, setSessionId] = useState<string>()
+  const [avatarId, setAvatarId] = useState<string>()
+  const [voiceId, setVoiceId] = useState<string>()
   const [session, setSession] = useState<Session>()
   const [clientSecret, setClientSecret] = useState<ClientSecret>()
   const [modalIsOpen, setModalIsOpen] = useState(false)
@@ -49,7 +53,9 @@ export default function Home () {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          requestedData
+          requestedData,
+          avatarId,
+          voiceId
         })
       })
       const { sessionId, clientSecret } = await response.json()
@@ -130,6 +136,16 @@ export default function Home () {
           }
         </span>
         {renderRequestedParams()}
+      </div>
+    )
+  }
+
+  const renderAvatarSettings = () => {
+    return (
+      <div className='flex flex-col gap-2 items-start w-full'>
+        <h2 className='font-semibold text-lg'>Avatar settings</h2>
+        <AvatarSelect value={avatarId} onSelect={setAvatarId} />
+        <VoiceSelect value={voiceId} onSelect={setVoiceId} />
       </div>
     )
   }
@@ -240,6 +256,7 @@ export default function Home () {
   return (
     <section className='flex flex-col items-center justify-center gap-6 py-4 md:py-4'>
       {renderRequestedData()}
+      {renderAvatarSettings()}
       <div className='flex flex-row py-4 gap-4 w-full justify-start'>
         <Button
           color='primary'
