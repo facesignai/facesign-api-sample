@@ -1,6 +1,7 @@
 import { FC, useState, useEffect } from 'react'
 import { Select, SelectItem } from '@nextui-org/select'
 import { Button } from '@nextui-org/button'
+import { Chip } from '@nextui-org/chip'
 import voicesData from './voices.json'
 
 type Voice = {
@@ -11,6 +12,9 @@ type Voice = {
   }
   gender: string
   tags: string
+  settings: {
+    elevenlabs_settings: any | null
+  }
 }
 
 type Props = {
@@ -53,6 +57,11 @@ const VoiceSelect: FC<Props> = ({ value, onSelect }) => {
           </span>
           {voice.tags && (
             <span className='text-xs text-gray-500'>{voice.tags}</span>
+          )}
+          {voice.settings.elevenlabs_settings !== null && (
+            <Chip size='sm' color='warning' variant='light'>
+              ElevenLabs
+            </Chip>
           )}
         </div>
       </div>

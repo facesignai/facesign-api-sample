@@ -18090,6 +18090,286 @@
         "support_realtime": true,
         "for_url2video": false,
         "emotion_support": false
+      },
+      {
+        "voice_id": "191dbebe004747d68afe3f0efc36ba19",
+        "labels": [],
+        "language": "unknown",
+        "flag": "",
+        "locale": "unknown",
+        "sort": 0,
+        "gender": "unknown",
+        "tags": "",
+        "display_name": "Charlotte",
+        "preview": {
+          "movio": "https://resource.heygen.ai/text_to_speech/bo9ndwpD5AKDhgf9rrZaK8.mp3"
+        },
+        "settings": {
+          "style": "",
+          "elevenlabs_settings": null,
+          "openai_emo_settings": {
+            "emotion": null,
+            "preview": null
+          },
+          "clone_emotions": null,
+          "default_emotion_id": null
+        },
+        "ssml": {
+          "style": [],
+          "lang": [],
+          "break": true,
+          "prosody": [
+            "rate"
+          ],
+          "emphasis": "none",
+          "say_as": []
+        },
+        "is_customer": true,
+        "is_favorite": false,
+        "is_paid": false,
+        "support_realtime": false,
+        "for_url2video": false,
+        "emotion_support": false
+      },
+      {
+        "voice_id": "065f24ebf00245abb2a4f645b5cbc910",
+        "labels": [],
+        "language": "unknown",
+        "flag": "",
+        "locale": "unknown",
+        "sort": 0,
+        "gender": "unknown",
+        "tags": "",
+        "display_name": "Alice",
+        "preview": {
+          "movio": "https://resource.heygen.ai/text_to_speech/SwiRFtXJY7CCfde43qdg33.mp3"
+        },
+        "settings": {
+          "style": "",
+          "elevenlabs_settings": null,
+          "openai_emo_settings": {
+            "emotion": null,
+            "preview": null
+          },
+          "clone_emotions": null,
+          "default_emotion_id": null
+        },
+        "ssml": {
+          "style": [],
+          "lang": [],
+          "break": true,
+          "prosody": [
+            "rate"
+          ],
+          "emphasis": "none",
+          "say_as": []
+        },
+        "is_customer": true,
+        "is_favorite": false,
+        "is_paid": false,
+        "support_realtime": false,
+        "for_url2video": false,
+        "emotion_support": false
+      },
+      {
+        "voice_id": "e2894df022744212b40fe86249d0885b",
+        "labels": [],
+        "language": "unknown",
+        "flag": "",
+        "locale": "unknown",
+        "sort": 0,
+        "gender": "unknown",
+        "tags": "",
+        "display_name": "Jessica",
+        "preview": {
+          "movio": "https://resource.heygen.ai/text_to_speech/uPjcLxa8hDieakBp6PVZPA.mp3"
+        },
+        "settings": {
+          "style": "",
+          "elevenlabs_settings": null,
+          "openai_emo_settings": {
+            "emotion": null,
+            "preview": null
+          },
+          "clone_emotions": null,
+          "default_emotion_id": null
+        },
+        "ssml": {
+          "style": [],
+          "lang": [],
+          "break": true,
+          "prosody": [
+            "rate"
+          ],
+          "emphasis": "none",
+          "say_as": []
+        },
+        "is_customer": true,
+        "is_favorite": false,
+        "is_paid": false,
+        "support_realtime": false,
+        "for_url2video": false,
+        "emotion_support": false
+      },
+      {
+        "voice_id": "944b261788254d8cb274bb6f0c347b51",
+        "labels": [],
+        "language": "unknown",
+        "flag": "",
+        "locale": "unknown",
+        "sort": 0,
+        "gender": "unknown",
+        "tags": "",
+        "display_name": "Laura",
+        "preview": {
+          "movio": "https://resource.heygen.ai/text_to_speech/KAL2ajJfoAFjvr54mtCsnD.mp3"
+        },
+        "settings": {
+          "style": "",
+          "elevenlabs_settings": null,
+          "openai_emo_settings": {
+            "emotion": null,
+            "preview": null
+          },
+          "clone_emotions": null,
+          "default_emotion_id": null
+        },
+        "ssml": {
+          "style": [],
+          "lang": [],
+          "break": true,
+          "prosody": [
+            "rate"
+          ],
+          "emphasis": "none",
+          "say_as": []
+        },
+        "is_customer": true,
+        "is_favorite": false,
+        "is_paid": false,
+        "support_realtime": false,
+        "for_url2video": false,
+        "emotion_support": false
+      },
+      {
+        "voice_id": "f76b151cb8724b5d9c3117787b5a6fb2",
+        "labels": [],
+        "language": "unknown",
+        "flag": "",
+        "locale": "unknown",
+        "sort": 0,
+        "gender": "unknown",
+        "tags": "",
+        "display_name": "Lily",
+        "preview": {
+          "movio": "https://resource.heygen.ai/text_to_speech/dBYmTtAdZAstsU9tdwZbwd.mp3"
+        },
+        "settings": {
+          "style": "",
+          "elevenlabs_settings": null,
+          "openai_emo_settings": {
+            "emotion": null,
+            "preview": null
+          },
+          "clone_emotions": null,
+          "default_emotion_id": null
+        },
+        "ssml": {
+          "style": [],
+          "lang": [],
+          "break": true,
+          "prosody": [
+            "rate"
+          ],
+          "emphasis": "none",
+          "say_as": []
+        },
+        "is_customer": true,
+        "is_favorite": false,
+        "is_paid": false,
+        "support_realtime": false,
+        "for_url2video": false,
+        "emotion_support": false
+      },
+      {
+        "voice_id": "5e659594578c4bef849e9c94358498ab",
+        "labels": [],
+        "language": "unknown",
+        "flag": "",
+        "locale": "unknown",
+        "sort": 0,
+        "gender": "unknown",
+        "tags": "",
+        "display_name": "Matilda",
+        "preview": {
+          "movio": "https://resource.heygen.ai/text_to_speech/QdByxs5yCdx3bGogLAyTfB.mp3"
+        },
+        "settings": {
+          "style": "",
+          "elevenlabs_settings": null,
+          "openai_emo_settings": {
+            "emotion": null,
+            "preview": null
+          },
+          "clone_emotions": null,
+          "default_emotion_id": null
+        },
+        "ssml": {
+          "style": [],
+          "lang": [],
+          "break": true,
+          "prosody": [
+            "rate"
+          ],
+          "emphasis": "none",
+          "say_as": []
+        },
+        "is_customer": true,
+        "is_favorite": false,
+        "is_paid": false,
+        "support_realtime": false,
+        "for_url2video": false,
+        "emotion_support": false
+      },
+      {
+        "voice_id": "a11567e7a1cf4be2bc7a92a0ce0355e2",
+        "labels": [],
+        "language": "unknown",
+        "flag": "",
+        "locale": "unknown",
+        "sort": 0,
+        "gender": "unknown",
+        "tags": "",
+        "display_name": "Sarah",
+        "preview": {
+          "movio": "https://resource.heygen.ai/text_to_speech/k6hw9QKHPZG925mV95XsN3.mp3"
+        },
+        "settings": {
+          "style": "",
+          "elevenlabs_settings": null,
+          "openai_emo_settings": {
+            "emotion": null,
+            "preview": null
+          },
+          "clone_emotions": null,
+          "default_emotion_id": null
+        },
+        "ssml": {
+          "style": [],
+          "lang": [],
+          "break": true,
+          "prosody": [
+            "rate"
+          ],
+          "emphasis": "none",
+          "say_as": []
+        },
+        "is_customer": true,
+        "is_favorite": false,
+        "is_paid": false,
+        "support_realtime": false,
+        "for_url2video": false,
+        "emotion_support": false
       }
     ]
   },
