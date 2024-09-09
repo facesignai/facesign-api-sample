@@ -15,6 +15,7 @@ type Voice = {
   settings: {
     elevenlabs_settings: any | null
   }
+  is_customer: boolean
 }
 
 type Props = {
@@ -58,7 +59,7 @@ const VoiceSelect: FC<Props> = ({ value, onSelect }) => {
           {voice.tags && (
             <span className='text-xs text-gray-500'>{voice.tags}</span>
           )}
-          {voice.settings.elevenlabs_settings !== null && (
+          {voice.is_customer && (
             <Chip size='sm' color='warning' variant='light'>
               ElevenLabs
             </Chip>
