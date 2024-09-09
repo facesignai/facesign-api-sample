@@ -29,7 +29,7 @@ const VoiceSelect: FC<Props> = ({ value, onSelect }) => {
 
   useEffect(() => {
     const englishVoices = voicesData.data.list.filter(
-      voice => voice.language === 'English'
+      voice => voice.language === 'English' || voice.is_customer
     )
     const sortedVoices = englishVoices.sort((a, b) =>
       a.display_name.localeCompare(b.display_name)
